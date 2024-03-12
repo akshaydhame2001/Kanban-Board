@@ -1,0 +1,78 @@
+/* styles.css responsive */
+
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .kanban-board {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .list {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    min-width: 200px;
+    flex: 1; /* Distribute available space equally among flex items */
+    max-width: 300px; /* Set a maximum width for better responsiveness */
+  }
+  
+  .list h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .task {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column; /* Adjust the layout to a column on smaller screens */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .task p {
+    margin: 0;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Take up the full width of the parent container */
+  }
+  
+  .buttons button {
+    margin-top: 5px; /* Add some space between buttons on smaller screens */
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .buttons button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .buttons button:hover:not([disabled]) {
+    background-color: #45a049;
+  }
+  

@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import "./index.css";
+import board from "./assets/board.png";
 
 const initialTasks = [
-  { id: 1, title: "Task 1", status: "backlog" },
-  { id: 2, title: "Task 2", status: "backlog" },
-  { id: 3, title: "Task 3", status: "doing" },
-  { id: 4, title: "Task 4", status: "doing" },
-  { id: 5, title: "Task 5", status: "review" },
-  { id: 6, title: "Task 6", status: "done" },
+  { id: 1, title: "Figma", status: "backlog" },
+  { id: 2, title: "AWS", status: "backlog" },
+  { id: 3, title: "React Native", status: "backlog" },
+  { id: 4, title: "Express.js", status: "doing" },
+  { id: 5, title: "Node.js", status: "doing" },
+  { id: 6, title: "Jest", status: "review" },
+  { id: 7, title: "Python", status: "review" },
+  { id: 8, title: "MongoDB", status: "review" },
+  { id: 9, title: "PostgreSQL", status: "doing" },
+  { id: 10, title: "HTML5", status: "done" },
+  { id: 11, title: "CSS3", status: "review" },
+  { id: 12, title: "Tailwind CSS", status: "done" },
+  { id: 13, title: "JavaScript", status: "done" },
+  { id: 14, title: "TypeScript", status: "done" },
+  { id: 15, title: "React.js", status: "done" },
+  { id: 16, title: "Next.js", status: "done" },
 ];
 
 const App = () => {
@@ -38,43 +49,49 @@ const App = () => {
   };
 
   return (
-    <div className="kanban-board">
-      <div className="list">
-        <h2>Backlog</h2>
-        {tasks
-          .filter((task) => task.status === "backlog")
-          .map((task) => (
-            <Task key={task.id} task={task} onMove={moveTask} />
-          ))}
+    <>
+      <div className="heading">
+        <img src={board} alt="logo" width={50} height={50} className="logo" />
+        <h1 className="title">Kanban Board</h1>
       </div>
+      <div className="kanban-board">
+        <div className="list">
+          <h2>Backlog</h2>
+          {tasks
+            .filter((task) => task.status === "backlog")
+            .map((task) => (
+              <Task key={task.id} task={task} onMove={moveTask} />
+            ))}
+        </div>
 
-      <div className="list">
-        <h2>Doing</h2>
-        {tasks
-          .filter((task) => task.status === "doing")
-          .map((task) => (
-            <Task key={task.id} task={task} onMove={moveTask} />
-          ))}
-      </div>
+        <div className="list">
+          <h2>Doing</h2>
+          {tasks
+            .filter((task) => task.status === "doing")
+            .map((task) => (
+              <Task key={task.id} task={task} onMove={moveTask} />
+            ))}
+        </div>
 
-      <div className="list">
-        <h2>Review</h2>
-        {tasks
-          .filter((task) => task.status === "review")
-          .map((task) => (
-            <Task key={task.id} task={task} onMove={moveTask} />
-          ))}
-      </div>
+        <div className="list">
+          <h2>Review</h2>
+          {tasks
+            .filter((task) => task.status === "review")
+            .map((task) => (
+              <Task key={task.id} task={task} onMove={moveTask} />
+            ))}
+        </div>
 
-      <div className="list">
-        <h2>Done</h2>
-        {tasks
-          .filter((task) => task.status === "done")
-          .map((task) => (
-            <Task key={task.id} task={task} onMove={moveTask} />
-          ))}
+        <div className="list">
+          <h2>Done</h2>
+          {tasks
+            .filter((task) => task.status === "done")
+            .map((task) => (
+              <Task key={task.id} task={task} onMove={moveTask} />
+            ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

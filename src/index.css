@@ -12,8 +12,29 @@ body {
 
 .kanban-board {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 20px;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.logo {
+  margin-block: 20px;
+  margin-right: 4px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  background-clip: text;
+  background-image: linear-gradient(to right, #38a169, #87ceeb);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .list {
